@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="4" seed="31"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf4e8"/>
+      <stop offset="1" stop-color="#eadcc9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="1024" fill="url(#bg)"/>
+  <rect width="1440" height="1024" filter="url(#paper)" opacity="0.82"/>
+  <path d="M-40 214C188 94 346 160 540 104c218-64 326-84 516 4 144 66 262 58 492-22v270H-40z" fill="#9ea98b" opacity="0.2"/>
+  <path d="M-40 820c220-78 412-62 584-104 252-62 480-160 986 12v250H-40z" fill="#b8c9c8" opacity="0.3"/>
+
+  <text x="82" y="88" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="15" letter-spacing="6">A PORTFOLIO AS A CONTACT SHEET</text>
+  <text x="82" y="184" fill="#241f1b" font-family="Georgia, serif" font-size="76">Choose a frame.</text>
+  <text x="86" y="232" fill="#6e655b" font-family="Inter, Arial, sans-serif" font-size="20">鼠标悬停某一张照片时，其他照片像水彩一样退开，选中的作品展开成一个章节。</text>
+
+  <g transform="translate(82 310)">
+    <rect x="0" y="0" width="390" height="300" fill="#fffaf0" stroke="#241f1b" stroke-opacity="0.1"/>
+    <image href="../assets/photos/geraniums.jpg" x="18" y="18" width="354" height="222" preserveAspectRatio="xMidYMid slice"/>
+    <text x="18" y="274" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">PHOTO / COLOR STUDY</text>
+  </g>
+  <g transform="translate(500 278) rotate(-1)">
+    <rect x="0" y="0" width="404" height="362" fill="#fffaf0" stroke="#241f1b" stroke-opacity="0.12"/>
+    <image href="../assets/photos/brick-lane.jpg" x="18" y="18" width="368" height="276" preserveAspectRatio="xMidYMid slice"/>
+    <text x="18" y="326" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">AI WORK / STRUCTURE</text>
+  </g>
+  <g transform="translate(930 322) rotate(1.2)">
+    <rect x="0" y="0" width="350" height="260" fill="#fffaf0" stroke="#241f1b" stroke-opacity="0.1"/>
+    <image href="../assets/photos/london-bus.jpg" x="16" y="16" width="318" height="182" preserveAspectRatio="xMidYMid slice"/>
+    <text x="16" y="230" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">CITY / MOTION</text>
+  </g>
+  <g transform="translate(196 658) rotate(1.5)">
+    <rect x="0" y="0" width="330" height="238" fill="#fffaf0" stroke="#241f1b" stroke-opacity="0.1"/>
+    <image href="../assets/photos/coastline.jpg" x="16" y="16" width="298" height="168" preserveAspectRatio="xMidYMid slice"/>
+    <text x="16" y="212" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">SERIES / LANDSCAPE</text>
+  </g>
+  <g transform="translate(670 674)">
+    <rect width="520" height="122" rx="61" fill="#241f1b"/>
+    <text x="42" y="50" fill="#fffaf0" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="3">INTERACTION</text>
+    <text x="42" y="86" fill="#fffaf0" font-family="Georgia, serif" font-size="28">Hover frames → expand chapters → enter work</text>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="19"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.16"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7eedf"/>
+      <stop offset="0.58" stop-color="#e8d7be"/>
+      <stop offset="1" stop-color="#b7c6c0"/>
+    </linearGradient>
+    <clipPath id="heroCrop">
+      <rect x="770" y="160" width="470" height="650" rx="230"/>
+    </clipPath>
+  </defs>
+  <rect width="1440" height="1024" fill="url(#bg)"/>
+  <rect width="1440" height="1024" filter="url(#paper)" opacity="0.9"/>
+  <circle cx="184" cy="214" r="250" fill="#b8c9c8" opacity="0.3"/>
+  <circle cx="1220" cy="760" r="320" fill="#bd6658" opacity="0.16"/>
+
+  <text x="88" y="80" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="15" letter-spacing="6">WORK / AI / PHOTO / CONTACT</text>
+  <text x="88" y="258" fill="#241f1b" font-family="Georgia, serif" font-size="92">Focus before</text>
+  <text x="88" y="352" fill="#241f1b" font-family="Georgia, serif" font-size="92">the image</text>
+  <text x="93" y="414" fill="#6e655b" font-family="Inter, Arial, sans-serif" font-size="21">进入首页前是一个取景器：拖动焦点，照片、文字、项目入口一起变清晰。</text>
+
+  <image href="../assets/photos/skater.jpg" x="770" y="160" width="470" height="650" preserveAspectRatio="xMidYMid slice" clip-path="url(#heroCrop)"/>
+  <rect x="770" y="160" width="470" height="650" rx="230" fill="none" stroke="#fffaf0" stroke-width="18"/>
+  <rect x="788" y="178" width="434" height="614" rx="217" fill="none" stroke="#2a241f" stroke-width="1.4" opacity="0.42"/>
+
+  <g stroke="#2a241f" stroke-width="2" opacity="0.52">
+    <path d="M720 244h90M720 244v90"/>
+    <path d="M1288 244h-90M1288 244v90"/>
+    <path d="M720 724h90M720 724v-90"/>
+    <path d="M1288 724h-90M1288 724v-90"/>
+    <line x1="1004" x2="1004" y1="148" y2="824" opacity="0.26"/>
+    <line x1="724" x2="1288" y1="486" y2="486" opacity="0.26"/>
+  </g>
+
+  <g transform="translate(94 555)">
+    <rect width="540" height="104" rx="52" fill="#fffaf0" opacity="0.72" stroke="#241f1b" stroke-opacity="0.14"/>
+    <circle cx="62" cy="52" r="30" fill="#bd6658"/>
+    <text x="118" y="45" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="15" letter-spacing="3">DRAG FOCUS</text>
+    <text x="118" y="73" fill="#6e655b" font-family="Inter, Arial, sans-serif" font-size="14">焦点滑动时，AI 项目、摄影系列、联系入口依次浮现</text>
+  </g>
+
+  <g transform="translate(94 742)">
+    <rect width="178" height="84" fill="none" stroke="#241f1b" opacity="0.26"/>
+    <text x="22" y="36" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">01</text>
+    <text x="22" y="62" fill="#241f1b" font-family="Georgia, serif" font-size="22">AI Work</text>
+  </g>
+  <g transform="translate(292 742)">
+    <rect width="178" height="84" fill="none" stroke="#241f1b" opacity="0.26"/>
+    <text x="22" y="36" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">02</text>
+    <text x="22" y="62" fill="#241f1b" font-family="Georgia, serif" font-size="22">Photo</text>
+  </g>
+  <g transform="translate(490 742)">
+    <rect width="178" height="84" fill="none" stroke="#241f1b" opacity="0.26"/>
+    <text x="22" y="36" fill="#241f1b" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="2">03</text>
+    <text x="22" y="62" fill="#241f1b" font-family="Georgia, serif" font-size="22">Contact</text>
+  </g>
+</svg>

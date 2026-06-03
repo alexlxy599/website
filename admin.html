@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Admin</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div>
+        <p>Portfolio Admin</p>
+        <h1>编辑网站内容</h1>
+      </div>
+      <nav>
+        <a href="index.html">查看首页</a>
+        <button type="button" id="save-button">保存预览</button>
+        <button type="button" id="export-button">导出 JSON</button>
+        <button type="button" id="export-js-button">导出 content.js</button>
+        <button type="button" id="reset-button">恢复默认</button>
+      </nav>
+    </header>
+
+    <main class="admin-layout">
+      <section class="admin-panel">
+        <h2>首页文字</h2>
+        <label>
+          小标题
+          <input id="hero-kicker" type="text" />
+        </label>
+        <label>
+          主标题
+          <input id="hero-title" type="text" />
+        </label>
+        <label>
+          描述
+          <textarea id="hero-description" rows="4"></textarea>
+        </label>
+      </section>
+
+      <section class="admin-panel">
+        <h2>首页轮换照片</h2>
+        <p class="hint">每行一张：图片路径 | 图片描述。建议使用横幅照片。</p>
+        <textarea id="hero-photos" rows="7"></textarea>
+      </section>
+
+      <section class="admin-panel">
+        <h2>AI 项目</h2>
+        <div id="projects-editor" class="editor-list"></div>
+        <button type="button" class="secondary" data-add="project">添加项目</button>
+      </section>
+
+      <section class="admin-panel">
+        <h2>摄影作品</h2>
+        <p class="hint">Layout 可填：空、large、wide、tall。</p>
+        <div id="photos-editor" class="editor-list"></div>
+        <button type="button" class="secondary" data-add="photo">添加照片</button>
+      </section>
+
+      <section class="admin-panel">
+        <h2>关于与链接</h2>
+        <label>
+          About 标题
+          <input id="about-title" type="text" />
+        </label>
+        <label>
+          About 描述
+          <textarea id="about-description" rows="4"></textarea>
+        </label>
+        <div id="links-editor" class="editor-list"></div>
+        <button type="button" class="secondary" data-add="link">添加链接</button>
+      </section>
+
+      <section class="admin-panel">
+        <h2>导入内容</h2>
+        <p class="hint">把之前导出的 JSON 粘贴到这里，然后点击导入。</p>
+        <textarea id="import-json" rows="8"></textarea>
+        <button type="button" class="secondary" id="import-button">导入 JSON</button>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="content.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
