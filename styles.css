@@ -210,11 +210,11 @@ button {
     0 0 42px rgba(191, 237, 204, 0.28),
     inset 0 0 42px rgba(8, 18, 12, 0.24);
   transition:
-    left 260ms ease,
-    top 260ms ease,
-    width 340ms ease,
-    height 340ms ease,
-    border-color 260ms ease;
+    left 72ms linear,
+    top 72ms linear,
+    width 180ms ease,
+    height 180ms ease,
+    border-color 120ms ease;
 }
 
 .camera-hero.is-focused .focus-reticle,
@@ -459,32 +459,27 @@ button {
   z-index: 100;
   pointer-events: none;
   opacity: 0;
-  background: #fffaf1;
+  background: #050403;
 }
 
 .shutter-transition.is-firing {
-  animation: shutterFlash 780ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: shutterClose 620ms cubic-bezier(0.22, 0.8, 0.22, 1);
 }
 
-@keyframes shutterFlash {
+@keyframes shutterClose {
   0% {
     opacity: 0;
-    background: #fffaf1;
+    background: #050403;
   }
 
-  14% {
-    opacity: 0.96;
-    background: #fffaf1;
-  }
-
-  42% {
-    opacity: 0.78;
-    background: #090807;
+  22% {
+    opacity: 1;
+    background: #050403;
   }
 
   100% {
-    opacity: 0;
-    background: #090807;
+    opacity: 1;
+    background: #050403;
   }
 }
 
