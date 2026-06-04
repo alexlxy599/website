@@ -238,11 +238,11 @@ function fireShutter(destination) {
     }
 
     window.location.href = destination;
-  }, 180);
+  }, 330);
 
   window.setTimeout(() => {
     shutterTransition.classList.remove("is-firing");
-  }, 680);
+  }, 760);
 }
 
 function drawBinaryLayer() {
