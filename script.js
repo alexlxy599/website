@@ -13,6 +13,9 @@ const shutterTransition = document.querySelector(".shutter-transition");
 let focusTimer;
 let heroPhotoIndex = 0;
 let heroRotationTimer;
+const binaryPhrase =
+  "01101000 01100101 01110010 01100101 00100000 01101001 01110100 00100000 01100011 01101111 01101101 01100101 01110011 00100000 01110100 01101000 01100101 00100000 01110011 01110101 01101110 00100000 01100001 01101110 01100100 00100000 01001001 00100000 01110011 01100001 01111001 00100000 01101001 01110100 00100000 01101001 01110011 00100000 01100001 01101100 01110010 01101001 01100111 01101000 01110100";
+const binaryStream = binaryPhrase.replace(/\s/g, "");
 
 const sampler = document.createElement("canvas");
 const samplerContext = sampler.getContext("2d", { willReadFrequently: true });
@@ -318,7 +321,8 @@ function drawBinaryLayer() {
       const green = pixels[index + 1];
       const blue = pixels[index + 2];
       const luminance = red * 0.2126 + green * 0.7152 + blue * 0.0722;
-      const bit = luminance > 118 ? "1" : "0";
+      const streamIndex = (row * sampleColumns + column + row * 11) % binaryStream.length;
+      const bit = binaryStream[streamIndex];
       const alpha = 0.24 + (luminance / 255) * 0.72;
 
       context.fillStyle = `rgba(184, 255, 202, ${alpha.toFixed(3)})`;
@@ -337,12 +341,11 @@ function drawFallbackBinary(context, width, height, columns, rows) {
 
   const cellWidth = width / columns;
   const cellHeight = height / rows;
-  const offset = 37;
 
   for (let row = 0; row < rows; row += 1) {
     for (let column = 0; column < columns; column += 1) {
-      const wave = Math.sin((column + offset) * 0.34) + Math.cos((row - offset) * 0.42);
-      const bit = wave > 0 ? "1" : "0";
+      const streamIndex = (row * columns + column + row * 11) % binaryStream.length;
+      const bit = binaryStream[streamIndex];
       const centerX = column / columns - 0.5;
       const centerY = row / rows - 0.5;
       const distance = Math.sqrt(centerX * centerX + centerY * centerY);
