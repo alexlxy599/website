@@ -170,6 +170,26 @@ textarea {
   gap: 10px;
 }
 
+.publish-panel {
+  grid-column: 1 / -1;
+}
+
+.publish-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+#publish-output {
+  min-height: 300px;
+  font-family:
+    SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre;
+}
+
 .toast {
   position: fixed;
   right: 18px;

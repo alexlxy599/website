@@ -11,6 +11,7 @@ const projectsEditor = document.querySelector("#projects-editor");
 const photosEditor = document.querySelector("#photos-editor");
 const linksEditor = document.querySelector("#links-editor");
 const importJson = document.querySelector("#import-json");
+const publishOutput = document.querySelector("#publish-output");
 const toast = document.querySelector("#toast");
 
 renderForm();
@@ -34,7 +35,7 @@ document.querySelector("#export-button").addEventListener("click", () => {
 
 document.querySelector("#export-js-button").addEventListener("click", () => {
   collectForm();
-  const fileText = `window.PORTFOLIO_CONTENT = ${JSON.stringify(state, null, 2)};\n`;
+  const fileText = buildContentJs();
   const blob = new Blob([fileText], { type: "text/javascript" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -42,6 +43,29 @@ document.querySelector("#export-js-button").addEventListener("click", () => {
   link.download = "content.js";
   link.click();
   URL.revokeObjectURL(url);
+});
+
+document.querySelector("#generate-js-button").addEventListener("click", () => {
+  collectForm();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  publishOutput.value = buildContentJs();
+  showToast("已生成。复制下面的内容发给 Codex 即可上线。");
+});
+
+document.querySelector("#copy-js-button").addEventListener("click", async () => {
+  collectForm();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  publishOutput.value = buildContentJs();
+  publishOutput.focus();
+  publishOutput.select();
+
+  try {
+    await navigator.clipboard.writeText(publishOutput.value);
+    showToast("已复制 content.js。");
+  } catch {
+    document.execCommand("copy");
+    showToast("已选中内容；如果没复制成功，请手动 Cmd+C。");
+  }
 });
 
 document.querySelector("#reset-button").addEventListener("click", () => {
@@ -194,6 +218,10 @@ function collectItem(item) {
     data[field.dataset.field] = field.value;
   });
   return data;
+}
+
+function buildContentJs() {
+  return `window.PORTFOLIO_CONTENT = ${JSON.stringify(state, null, 2)};\n`;
 }
 
 function bindRemoveButtons() {

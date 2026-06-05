@@ -77,6 +77,16 @@
         <textarea id="import-json" rows="8"></textarea>
         <button type="button" class="secondary" id="import-button">导入 JSON</button>
       </section>
+
+      <section class="admin-panel publish-panel">
+        <h2>发布内容</h2>
+        <p class="hint">如果导出按钮不能下载，先点生成发布内容，再复制下面这段给 Codex。</p>
+        <div class="publish-actions">
+          <button type="button" class="secondary" id="generate-js-button">生成发布内容</button>
+          <button type="button" class="secondary" id="copy-js-button">复制 content.js</button>
+        </div>
+        <textarea id="publish-output" rows="12" readonly placeholder="生成后的 content.js 会显示在这里。"></textarea>
+      </section>
     </main>
 
     <div class="toast" id="toast" hidden></div>
