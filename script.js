@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v1";
+const STORAGE_KEY = "alex-portfolio-content-v2";
 const defaultContent = window.PORTFOLIO_CONTENT;
 const content = loadContent();
 

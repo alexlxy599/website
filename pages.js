@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v1";
+const STORAGE_KEY = "alex-portfolio-content-v2";
 const pageContent = loadPageContent();
 const pageType = document.body.dataset.page;
 

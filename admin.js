@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v1";
+const STORAGE_KEY = "alex-portfolio-content-v2";
 let state = loadState();
 
 const heroKicker = document.querySelector("#hero-kicker");
