@@ -132,6 +132,7 @@ function renderPhotos() {
           </div>
           <div class="field-grid">
             <label>标题<input data-field="title" value="${escapeAttribute(photo.title)}" /></label>
+            <label>城市<input data-field="location" placeholder="例如 Vancouver" value="${escapeAttribute(photo.location || "")}" /></label>
             <label>Layout<input data-field="layout" value="${escapeAttribute(photo.layout || "")}" /></label>
           </div>
           <label>图片路径或 URL<input data-field="src" value="${escapeAttribute(photo.src)}" /></label>

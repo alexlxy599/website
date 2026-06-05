@@ -125,15 +125,18 @@ function renderPhotos(photos) {
   gallery.innerHTML = photos
     .map((photo) => {
       const layout = photo.layout ? ` ${photo.layout}` : "";
+      const label = photo.location || "";
+      const location = label ? `<span>${escapeHtml(label)}</span>` : "";
+      const locationClass = label ? " has-location" : "";
       return `
         <button
-          class="photo-card${layout}"
+          class="photo-card${layout}${locationClass}"
           type="button"
           data-full="${escapeAttribute(photo.src)}"
-          data-title="${escapeAttribute(photo.title || "")}"
+          data-title="${escapeAttribute(label)}"
         >
           <img src="${escapeAttribute(photo.src)}" alt="${escapeAttribute(photo.alt || photo.title || "")}" />
-          <span>${escapeHtml(photo.title || "")}</span>
+          ${location}
         </button>
       `;
     })
