@@ -942,6 +942,116 @@ figcaption {
   padding: 0;
 }
 
+.photography-shell {
+  max-width: 1520px;
+  padding-inline: clamp(18px, 5vw, 96px);
+}
+
+.photography-shell .page-hero {
+  max-width: 760px;
+  padding-bottom: clamp(28px, 5vw, 72px);
+}
+
+.photography-shell .page-hero h1 {
+  font-size: clamp(46px, 8vw, 112px);
+  letter-spacing: 0;
+}
+
+.photography-shell .page-hero p:not(.kicker) {
+  max-width: 520px;
+}
+
+.page-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(42px, 8vw, 132px);
+}
+
+.page-gallery .photo-card {
+  width: min(100%, var(--photo-width, 860px));
+  min-height: 0;
+  margin-left: var(--photo-left, 0);
+  padding: 0;
+  overflow: visible;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  cursor: zoom-in;
+}
+
+.page-gallery .photo-card:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.page-gallery .photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: rgba(255, 250, 241, 0.58);
+  box-shadow: 0 20px 60px rgba(33, 29, 25, 0.12);
+}
+
+.page-gallery .photo-card::after {
+  display: none;
+}
+
+.page-gallery .photo-card .photo-location {
+  position: static;
+  display: block;
+  width: auto;
+  max-width: none;
+  margin-top: 12px;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  backdrop-filter: none;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-align: left;
+}
+
+.page-gallery .feature {
+  --photo-width: 100%;
+  --photo-left: 0;
+}
+
+.page-gallery .left {
+  --photo-width: min(66vw, 900px);
+  --photo-left: 3%;
+}
+
+.page-gallery .right {
+  --photo-width: min(52vw, 720px);
+  --photo-left: auto;
+  margin-right: 6%;
+}
+
+.page-gallery .center {
+  --photo-width: min(74vw, 980px);
+  --photo-left: auto;
+  margin-right: auto;
+}
+
+.page-gallery .small-left {
+  --photo-width: min(42vw, 560px);
+  --photo-left: 12%;
+}
+
+.page-gallery .wide {
+  --photo-width: min(88vw, 1180px);
+  --photo-left: auto;
+  margin-right: auto;
+}
+
+.page-gallery .small-right {
+  --photo-width: min(38vw, 520px);
+  --photo-left: auto;
+  margin-right: 12%;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1089,6 +1199,20 @@ figcaption {
 
   .gallery {
     grid-auto-rows: 280px;
+  }
+
+  .photography-shell {
+    padding-inline: 18px;
+  }
+
+  .page-gallery {
+    gap: 42px;
+  }
+
+  .page-gallery .photo-card {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .site-footer {

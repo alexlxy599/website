@@ -68,13 +68,14 @@ function renderProjectsPage() {
 function renderPhotographyPage() {
   const gallery = document.querySelector(".gallery");
   gallery.innerHTML = pageContent.photos
-    .map((photo) => {
+    .map((photo, index) => {
       const layout = photo.layout ? ` ${photo.layout}` : "";
       const label = photo.location || "";
-      const location = label ? `<span>${escapeHtml(label)}</span>` : "";
+      const location = label ? `<span class="photo-location">${escapeHtml(label)}</span>` : "";
       const locationClass = label ? " has-location" : "";
+      const flowClass = getPhotoFlowClass(index);
       return `
-        <button class="photo-card${layout}${locationClass}" type="button" data-full="${escapeAttribute(photo.src)}" data-title="${escapeAttribute(label)}">
+        <button class="photo-card photo-flow-item ${flowClass}${layout}${locationClass}" type="button" data-full="${escapeAttribute(photo.src)}" data-title="${escapeAttribute(label)}">
           <img src="${escapeAttribute(photo.src)}" alt="${escapeAttribute(photo.alt || photo.title || "")}" />
           ${location}
         </button>
@@ -83,6 +84,11 @@ function renderPhotographyPage() {
     .join("");
 
   bindLightbox();
+}
+
+function getPhotoFlowClass(index) {
+  const pattern = ["feature", "left", "right", "center", "small-left", "wide", "small-right"];
+  return pattern[index % pattern.length];
 }
 
 function renderContactPage() {
