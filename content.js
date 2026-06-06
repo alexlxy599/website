@@ -168,14 +168,14 @@ window.PORTFOLIO_CONTENT = {
     },
     {
       "title": "Winter Mountain",
-      "location": "Banff",
+      "location": "Fairbanks",
       "layout": "wide",
       "src": "assets/photos/inbox/winter-mountain.jpg",
       "alt": "雪地中的山脉"
     },
     {
       "title": "Winter Road",
-      "location": "Banff",
+      "location": "Fairbanks",
       "layout": "wide",
       "src": "assets/photos/inbox/winter-road.jpg",
       "alt": "冬日道路上的夕阳"
@@ -273,7 +273,7 @@ window.PORTFOLIO_CONTENT = {
     },
     {
       "title": "Snow Negative",
-      "location": "Banff",
+      "location": "Fairbanks",
       "layout": "wide",
       "src": "assets/photos/inbox/snow-negative.jpg",
       "alt": "黑白反相质感的雪山"
@@ -354,9 +354,9 @@ window.PORTFOLIO_CONTENT = {
       "description": "Water, coastlines, city edges, and evening color."
     },
     {
-      "city": "Banff",
-      "key": "banff",
-      "map": "assets/maps/map-banff.jpg",
+      "city": "Fairbanks",
+      "key": "fairbanks",
+      "map": "assets/maps/map-fairbanks.jpg",
       "description": "Snow, roads, mountains, and northern light."
     }
   ]
