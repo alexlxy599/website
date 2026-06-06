@@ -358,6 +358,24 @@ window.PORTFOLIO_CONTENT = {
       "key": "fairbanks",
       "map": "assets/maps/map-fairbanks.jpg",
       "description": "Snow, roads, mountains, and northern light."
+    },
+    {
+      "city": "Tokyo",
+      "key": "tokyo",
+      "map": "assets/maps/map-tokyo.jpg",
+      "description": "Small urban observations and moving windows."
+    },
+    {
+      "city": "Kyoto",
+      "key": "kyoto",
+      "map": "assets/maps/map-kyoto.jpg",
+      "description": "Temples, streets, gardens, and quiet structure."
+    },
+    {
+      "city": "Cambridge",
+      "key": "cambridge",
+      "map": "assets/maps/map-cambridge.jpg",
+      "description": "Rivers, colleges, village facades, and soft light."
     }
   ]
 };
