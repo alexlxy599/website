@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v2";
+const STORAGE_KEY = "alex-portfolio-content-v3";
 const defaultContent = window.PORTFOLIO_CONTENT;
 const content = loadContent();
 
@@ -54,6 +54,7 @@ function mergeContent(base, saved) {
     workPanels: saved.workPanels?.length ? saved.workPanels : base.workPanels,
     projects: saved.projects?.length ? saved.projects : base.projects,
     photos: saved.photos?.length ? saved.photos : base.photos,
+    photoCities: saved.photoCities?.length ? saved.photoCities : base.photoCities,
     links: saved.links?.length ? saved.links : base.links,
   };
 }
@@ -122,25 +123,37 @@ function renderPhotoBreak(photoBreak) {
 
 function renderPhotos(photos) {
   const gallery = document.querySelector(".gallery");
-  gallery.innerHTML = photos
-    .map((photo) => {
-      const layout = photo.layout ? ` ${photo.layout}` : "";
-      const label = photo.location || "";
-      const location = label ? `<span>${escapeHtml(label)}</span>` : "";
-      const locationClass = label ? " has-location" : "";
+  const photoCities = content.photoCities || [];
+  const cityCounts = getCityCounts(photos);
+  gallery.classList.add("photo-city-atlas");
+  gallery.innerHTML = photoCities
+    .map((entry, index) => {
+      const count = cityCounts.get(entry.key) || 0;
       return `
-        <button
-          class="photo-card${layout}${locationClass}"
-          type="button"
-          data-full="${escapeAttribute(photo.src)}"
-          data-title="${escapeAttribute(label)}"
-        >
-          <img src="${escapeAttribute(photo.src)}" alt="${escapeAttribute(photo.alt || photo.title || "")}" />
-          ${location}
-        </button>
+        <a class="city-map-card ${index === 0 ? "featured" : ""}" href="photography.html?city=${escapeAttribute(entry.key)}">
+          <img src="${escapeAttribute(entry.map)}" alt="${escapeAttribute(entry.city)} watercolor map" />
+          <span class="city-map-index">${String(index + 1).padStart(2, "0")}</span>
+          <span class="city-map-name">${escapeHtml(entry.city)}</span>
+          <span class="city-map-count">${count || "View"} ${count === 1 ? "photo" : count ? "photos" : "collection"}</span>
+          <p>${escapeHtml(entry.description || "")}</p>
+        </a>
       `;
     })
     .join("");
+}
+
+function getCityCounts(photos) {
+  return photos.reduce((counts, photo) => {
+    const key = normalizeCity(photo.location || "");
+    if (key) {
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+    return counts;
+  }, new Map());
+}
+
+function normalizeCity(city) {
+  return city.trim().toLowerCase();
 }
 
 function renderAbout(about, links) {
@@ -157,7 +170,12 @@ function renderAbout(about, links) {
 }
 
 function bindLightbox() {
-  document.querySelector(".gallery").addEventListener("click", (event) => {
+  const gallery = document.querySelector(".gallery");
+  if (!gallery) {
+    return;
+  }
+
+  gallery.addEventListener("click", (event) => {
     const card = event.target.closest(".photo-card");
     if (!card) {
       return;

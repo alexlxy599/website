@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v2";
+const STORAGE_KEY = "alex-portfolio-content-v3";
 let state = loadState();
 
 const heroKicker = document.querySelector("#hero-kicker");
@@ -259,6 +259,7 @@ function mergeContent(base, saved) {
     workPanels: saved.workPanels?.length ? saved.workPanels : base.workPanels,
     projects: saved.projects?.length ? saved.projects : base.projects,
     photos: saved.photos?.length ? saved.photos : base.photos,
+    photoCities: saved.photoCities?.length ? saved.photoCities : base.photoCities,
     links: saved.links?.length ? saved.links : base.links,
   };
 }

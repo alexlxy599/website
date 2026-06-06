@@ -84,238 +84,238 @@ window.PORTFOLIO_CONTENT = {
   "photos": [
     {
       "title": "Platform",
-      "location": "",
+      "location": "Montreal",
       "layout": "wide",
       "src": "assets/photos/inbox/subway-platform.jpg",
       "alt": "地铁站台上的人影"
     },
     {
       "title": "Crowd Study",
-      "location": "",
+      "location": "Montreal",
       "layout": "tall",
       "src": "assets/photos/inbox/subway-crowd.jpg",
       "alt": "地铁站里的俯视人群"
     },
     {
       "title": "Gallery Image",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/gallery-57a9d980.jpg",
       "alt": "横幅摄影作品"
     },
     {
       "title": "Gallery Image",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/gallery-9346ae20.jpg",
       "alt": "竖幅摄影作品"
     },
     {
       "title": "Gulls",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/gulls-at-sunset.jpg",
       "alt": "日落时飞过的人群与海鸟"
     },
     {
       "title": "Through Glass",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/sunset-frame.jpg",
       "alt": "窗框里的海上日落"
     },
     {
       "title": "Roof Gull",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/roof-gull.jpg",
       "alt": "屋檐上的海鸥"
     },
     {
       "title": "Vertical Sun",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/vertical-sun.jpg",
       "alt": "竖幅海上日落"
     },
     {
       "title": "Amber Sun",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/amber-sun.jpg",
       "alt": "金色海面上的落日"
     },
     {
       "title": "Coastal Evening",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/coastal-evening.jpg",
       "alt": "傍晚的海岸线"
     },
     {
       "title": "Violet Coast",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/violet-coast.jpg",
       "alt": "紫色暮光里的海岸"
     },
     {
       "title": "Red Light",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/red-light-figure.jpg",
       "alt": "红色光线照亮的人物"
     },
     {
       "title": "Winter Mountain",
-      "location": "",
+      "location": "Banff",
       "layout": "wide",
       "src": "assets/photos/inbox/winter-mountain.jpg",
       "alt": "雪地中的山脉"
     },
     {
       "title": "Winter Road",
-      "location": "",
+      "location": "Banff",
       "layout": "wide",
       "src": "assets/photos/inbox/winter-road.jpg",
       "alt": "冬日道路上的夕阳"
     },
     {
       "title": "Street Elder",
-      "location": "",
+      "location": "London",
       "layout": "wide",
       "src": "assets/photos/inbox/street-elder.jpg",
       "alt": "阳光街道上的老人"
     },
     {
       "title": "Wheel Field",
-      "location": "",
+      "location": "London",
       "layout": "tall",
       "src": "assets/photos/inbox/wheel-field.jpg",
       "alt": "草地远处的摩天轮"
     },
     {
       "title": "Village Facade",
-      "location": "",
+      "location": "Cambridge",
       "layout": "tall",
       "src": "assets/photos/inbox/village-facade-new.jpg",
       "alt": "阳光下的白色乡村建筑"
     },
     {
       "title": "Market Shade",
-      "location": "",
+      "location": "London",
       "layout": "wide",
       "src": "assets/photos/inbox/market-stroller.jpg",
       "alt": "市场棚下的人和婴儿车"
     },
     {
       "title": "Window Sign",
-      "location": "",
+      "location": "London",
       "layout": "tall",
       "src": "assets/photos/inbox/window-sign.jpg",
       "alt": "窗边标识和室内光线"
     },
     {
       "title": "Tree Building",
-      "location": "",
+      "location": "London",
       "layout": "wide",
       "src": "assets/photos/inbox/tree-building.jpg",
       "alt": "树枝与建筑立面"
     },
     {
       "title": "Canal Window",
-      "location": "",
+      "location": "Cambridge",
       "layout": "tall",
       "src": "assets/photos/inbox/canal-window.jpg",
       "alt": "窗框中的水边景色"
     },
     {
       "title": "Church Tower",
-      "location": "",
+      "location": "London",
       "layout": "tall",
       "src": "assets/photos/inbox/church-tower.jpg",
       "alt": "蓝天下的教堂塔楼"
     },
     {
       "title": "Evening Pair",
-      "location": "",
+      "location": "London",
       "layout": "tall",
       "src": "assets/photos/inbox/evening-couple.jpg",
       "alt": "黄昏里靠在一起的人"
     },
     {
       "title": "Fireworks",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/fireworks-bridge.jpg",
       "alt": "桥边夜空中的烟花"
     },
     {
       "title": "Sailboat",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/sailboat-swimmer.jpg",
       "alt": "海面上的帆船与游泳者"
     },
     {
       "title": "Birds Between Buildings",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/birds-between-buildings.jpg",
       "alt": "楼宇间飞过的鸟"
     },
     {
       "title": "Lake Silhouette",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/lake-silhouette.jpg",
       "alt": "湖边的人影和山"
     },
     {
       "title": "Snow Negative",
-      "location": "",
+      "location": "Banff",
       "layout": "wide",
       "src": "assets/photos/inbox/snow-negative.jpg",
       "alt": "黑白反相质感的雪山"
     },
     {
       "title": "Quiet Building",
-      "location": "",
+      "location": "Tokyo",
       "layout": "wide",
       "src": "assets/photos/inbox/quiet-building.jpg",
       "alt": "安静光线里的建筑"
     },
     {
       "title": "Wind Window",
-      "location": "",
+      "location": "Tokyo",
       "layout": "wide",
       "src": "assets/photos/inbox/wind-window.jpg",
       "alt": "车窗外的风车与暮色"
     },
     {
       "title": "Vending Machines",
-      "location": "",
+      "location": "Tokyo",
       "layout": "wide",
       "src": "assets/photos/inbox/vending-machines.jpg",
       "alt": "街边自动售货机"
     },
     {
       "title": "Gallery Image",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/img-4216.jpg",
       "alt": "横幅摄影作品"
     },
     {
       "title": "Gallery Image",
-      "location": "",
+      "location": "Vancouver",
       "layout": "wide",
       "src": "assets/photos/inbox/img-4821.jpg",
       "alt": "横幅摄影作品"
     },
     {
       "title": "Gallery Image",
-      "location": "",
+      "location": "Vancouver",
       "layout": "tall",
       "src": "assets/photos/inbox/img-5321.jpg",
       "alt": "竖幅摄影作品"
@@ -338,6 +338,26 @@ window.PORTFOLIO_CONTENT = {
     {
       "label": "Instagram",
       "href": "#"
+    }
+  ],
+  "photoCities": [
+    {
+      "city": "London",
+      "key": "london",
+      "map": "assets/maps/map-london.jpg",
+      "description": "Streets, stone, transit, and late light."
+    },
+    {
+      "city": "Vancouver",
+      "key": "vancouver",
+      "map": "assets/maps/map-vancouver.jpg",
+      "description": "Water, coastlines, city edges, and evening color."
+    },
+    {
+      "city": "Banff",
+      "key": "banff",
+      "map": "assets/maps/map-banff.jpg",
+      "description": "Snow, roads, mountains, and northern light."
     }
   ]
 };

@@ -1,4 +1,4 @@
-const STORAGE_KEY = "alex-portfolio-content-v2";
+const STORAGE_KEY = "alex-portfolio-content-v3";
 const pageContent = loadPageContent();
 const pageType = document.body.dataset.page;
 
@@ -67,6 +67,7 @@ function renderProjectsPage() {
 
 function renderPhotographyPage() {
   const gallery = document.querySelector(".gallery");
+  const selectedCity = normalizeCity(new URLSearchParams(window.location.search).get("city") || "");
   gallery.innerHTML = pageContent.photos
     .map((photo, index) => {
       const layout = photo.layout ? ` ${photo.layout}` : "";
@@ -74,8 +75,9 @@ function renderPhotographyPage() {
       const location = label ? `<span class="photo-location">${escapeHtml(label)}</span>` : "";
       const locationClass = label ? " has-location" : "";
       const flowClass = getPhotoFlowClass(index);
+      const isHidden = selectedCity && normalizeCity(label) !== selectedCity ? " hidden" : "";
       return `
-        <button class="photo-card photo-flow-item ${flowClass}${layout}${locationClass}" type="button" data-full="${escapeAttribute(photo.src)}" data-title="${escapeAttribute(label)}">
+        <button class="photo-card photo-flow-item ${flowClass}${layout}${locationClass}${isHidden}" type="button" data-full="${escapeAttribute(photo.src)}" data-title="${escapeAttribute(label)}">
           <img src="${escapeAttribute(photo.src)}" alt="${escapeAttribute(photo.alt || photo.title || "")}" />
           ${location}
         </button>
@@ -89,6 +91,10 @@ function renderPhotographyPage() {
 function getPhotoFlowClass(index) {
   const pattern = ["feature", "left", "right", "center", "small-left", "wide", "small-right"];
   return pattern[index % pattern.length];
+}
+
+function normalizeCity(city) {
+  return city.trim().toLowerCase();
 }
 
 function renderContactPage() {
@@ -141,6 +147,7 @@ function mergeContent(base, saved) {
     workPanels: saved.workPanels?.length ? saved.workPanels : base.workPanels,
     projects: saved.projects?.length ? saved.projects : base.projects,
     photos: saved.photos?.length ? saved.photos : base.photos,
+    photoCities: saved.photoCities?.length ? saved.photoCities : base.photoCities,
     links: saved.links?.length ? saved.links : base.links,
   };
 }
