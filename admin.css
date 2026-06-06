@@ -144,6 +144,44 @@ textarea {
   border-radius: 8px;
 }
 
+.photo-editor-item {
+  grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.photo-editor-preview {
+  position: sticky;
+  top: 110px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  background: rgba(33, 29, 25, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.photo-editor-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photo-editor-fields {
+  display: grid;
+  gap: 10px;
+}
+
+.city-field input {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.compact-fields {
+  grid-template-columns: minmax(110px, 0.38fr) minmax(0, 1fr);
+}
+
 .editor-item-header {
   display: flex;
   align-items: center;
@@ -203,12 +241,18 @@ textarea {
 @media (max-width: 900px) {
   .admin-header,
   .admin-layout,
-  .field-grid {
+  .field-grid,
+  .photo-editor-item {
     grid-template-columns: 1fr;
   }
 
   .admin-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .photo-editor-preview {
+    position: static;
+    max-width: 220px;
   }
 }

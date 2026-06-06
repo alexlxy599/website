@@ -149,18 +149,22 @@ function renderPhotos() {
   photosEditor.innerHTML = state.photos
     .map(
       (photo, index) => `
-        <div class="editor-item" data-photo="${index}">
-          <div class="editor-item-header">
-            <span>Photo ${index + 1}</span>
-            <button type="button" data-remove-photo="${index}">删除</button>
+        <div class="editor-item photo-editor-item" data-photo="${index}">
+          <figure class="photo-editor-preview">
+            <img src="${escapeAttribute(photo.src)}" alt="${escapeAttribute(photo.alt || photo.location || `Photo ${index + 1}`)}" loading="lazy" />
+          </figure>
+          <div class="photo-editor-fields">
+            <div class="editor-item-header">
+              <span>${escapeHtml(photo.location || `Photo ${index + 1}`)}</span>
+              <button type="button" data-remove-photo="${index}">删除</button>
+            </div>
+            <label class="city-field">城市<input data-field="location" placeholder="例如 Vancouver" value="${escapeAttribute(photo.location || "")}" /></label>
+            <div class="field-grid compact-fields">
+              <label>Layout<input data-field="layout" value="${escapeAttribute(photo.layout || "")}" /></label>
+              <label>图片描述<input data-field="alt" value="${escapeAttribute(photo.alt || "")}" /></label>
+            </div>
+            <label>图片路径或 URL<input data-field="src" value="${escapeAttribute(photo.src)}" /></label>
           </div>
-          <div class="field-grid">
-            <label>标题<input data-field="title" value="${escapeAttribute(photo.title)}" /></label>
-            <label>城市<input data-field="location" placeholder="例如 Vancouver" value="${escapeAttribute(photo.location || "")}" /></label>
-            <label>Layout<input data-field="layout" value="${escapeAttribute(photo.layout || "")}" /></label>
-          </div>
-          <label>图片路径或 URL<input data-field="src" value="${escapeAttribute(photo.src)}" /></label>
-          <label>图片描述<input data-field="alt" value="${escapeAttribute(photo.alt || "")}" /></label>
         </div>
       `,
     )
@@ -207,7 +211,7 @@ function collectForm() {
     collectItem(item),
   );
   state.photos = [...photosEditor.querySelectorAll("[data-photo]")].map((item) =>
-    collectItem(item),
+    normalizePhotoItem(collectItem(item)),
   );
   state.links = [...linksEditor.querySelectorAll("[data-link]")].map((item) => collectItem(item));
 }
@@ -218,6 +222,17 @@ function collectItem(item) {
     data[field.dataset.field] = field.value;
   });
   return data;
+}
+
+function normalizePhotoItem(photo) {
+  const city = photo.location?.trim() || "";
+  return {
+    title: city,
+    location: city,
+    layout: photo.layout || "",
+    src: photo.src || "",
+    alt: photo.alt || city,
+  };
 }
 
 function buildContentJs() {
