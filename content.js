@@ -362,7 +362,7 @@ window.PORTFOLIO_CONTENT = {
     {
       "city": "Tokyo",
       "key": "tokyo",
-      "map": "assets/maps/map-tokyo.jpg",
+      "map": "assets/maps/map-cambridge.jpg",
       "description": "Small urban observations and moving windows."
     },
     {
@@ -374,7 +374,7 @@ window.PORTFOLIO_CONTENT = {
     {
       "city": "Cambridge",
       "key": "cambridge",
-      "map": "assets/maps/map-cambridge.jpg",
+      "map": "assets/maps/map-tokyo.jpg",
       "description": "Rivers, colleges, village facades, and soft light."
     }
   ]
